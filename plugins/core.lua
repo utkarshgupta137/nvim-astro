@@ -74,4 +74,68 @@ return {
   --     }, { mode = "n", prefix = "<leader>" })
   --   end,
   -- },
+
+  {
+    "AstroNvim/astrotheme",
+    opts = {
+      terminal_colors = false,
+    },
+  },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = {
+      show_current_context = false,
+      show_trailing_blankline_indent = true,
+      use_treesitter = false,
+    },
+  },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    opts = {
+      filesystem = {
+        filtered_items = {
+          visible = true,
+          hide_dotfiles = false,
+        },
+        group_empty_dirs = true,
+        use_libuv_file_watcher = true,
+      },
+      window = {
+        mappings = {
+          ["C"] = "close_all_subnodes",
+          ["Z"] = "expand_all_nodes",
+        },
+      },
+    },
+  },
+
+  {
+    "Shatur/neovim-session-manager",
+    lazy = false,
+    opts = {
+      autoload_mode = require("session_manager.config").AutoloadMode.CurrentDir, -- Define what to do when Neovim is started without arguments. Possible values: Disabled, CurrentDir, LastSession
+    },
+  },
+
+  {
+    "rcarriga/nvim-notify",
+    opts = {
+      max_width = 100,
+      max_height = 30,
+      stages = "static",
+    },
+  },
+
+  {
+    "akinsho/toggleterm.nvim",
+    opts = {
+      highlights = {
+        NormalFloat = {
+          guibg = "#1d1f21",
+        },
+      },
+    },
+  },
 }

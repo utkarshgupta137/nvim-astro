@@ -2,7 +2,7 @@ return {
   -- Configure AstroNvim updates
   updater = {
     remote = "origin", -- remote to use
-    channel = "stable", -- "stable" or "nightly"
+    channel = "nightly", -- "stable" or "nightly"
     version = "latest", -- "latest", tag name, or regex search like "v1.*" to only do updates before v2 (STABLE ONLY)
     branch = "nightly", -- branch name (NIGHTLY ONLY)
     commit = nil, -- commit hash (NIGHTLY ONLY)
@@ -19,6 +19,13 @@ return {
 
   -- Set colorscheme to use
   colorscheme = "astrodark",
+
+  heirline = {
+    separators = {
+      breadcrumbs = "  ",
+      path = "  ",
+    },
+  },
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -37,10 +44,13 @@ return {
         },
         ignore_filetypes = { -- disable format on save for specified filetypes
           -- "python",
+          "markdown",
+          "yaml",
         },
       },
       disabled = { -- disable formatting capabilities for the listed language servers
-        -- "sumneko_lua",
+        "lua_ls",
+        "taplo",
       },
       timeout_ms = 1000, -- default format timeout
       -- filter = function(client) -- fully override the default formatting function
@@ -80,5 +90,40 @@ return {
     --     ["~/%.config/foo/.*"] = "fooscript",
     --   },
     -- }
+
+    vim.on_key(function(char)
+      if vim.fn.mode() == "n" then
+        local new_hlsearch = vim.tbl_contains({ "<CR>", "n", "N", "z", "*", "#", "?", "/" }, vim.fn.keytrans(char))
+        if vim.opt.hlsearch:get() ~= new_hlsearch then vim.opt.hlsearch = new_hlsearch end
+      end
+    end, vim.api.nvim_create_namespace "auto_hlsearch")
+
+    vim.api.nvim_create_autocmd("UiEnter", {
+      callback = function()
+        if vim.fn.argc() == 0 then vim.cmd "Neotree show" end
+      end,
+    })
+
+    vim.api.nvim_create_autocmd("CursorHold", {
+      buffer = bufnr,
+      callback = function()
+        local opts = {
+          focusable = false,
+          close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+          border = "rounded",
+          source = "always",
+          prefix = " ",
+          scope = "cursor",
+        }
+        vim.diagnostic.open_float(nil, opts)
+      end,
+    })
+
+    vim.api.nvim_create_user_command("RedrawDeco", function()
+      vim.cmd "TSDisable rainbow"
+      vim.cmd "IndentBlanklineToggle"
+      vim.cmd "IndentBlanklineToggle"
+      vim.cmd "TSEnable rainbow"
+    end, { desc = "Refresh indents & rainbow" })
   end,
 }
