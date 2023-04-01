@@ -12,6 +12,7 @@ return {
   { import = "astrocommunity.diagnostics.trouble-nvim" },
   { import = "astrocommunity.editing-support.nvim-regexplainer" },
   { import = "astrocommunity.editing-support.nvim-ts-rainbow2" },
+  { import = "astrocommunity.indent.indent-tools-nvim" },
   { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.json" },
