@@ -46,6 +46,7 @@ return {
     ["<leader>fg"] = { function() require("telescope.builtin").git_files() end, desc = "Find git files" },
     ["<leader>fr"] = { function() require("telescope").extensions.frecency.frecency() end, desc = "Find frecency" },
     ["<leader>r"] = { ":%sno/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", desc = "Search & Replace word" },
+    ["<leader>R"] = { function() require("ssr").open() end, desc = "Structural Search & Replace" },
     ["XX"] = { "dd", desc = "Cut line" },
     -- Common
     X = { "d", desc = "Cut" },
@@ -65,6 +66,7 @@ return {
     J = { "<cmd>m '>+1<cr>gv=gv", desc = "Move selection down" },
     K = { "<cmd>m '<-2<cr>gv=gv", desc = "Move selection up" },
     ["<leader>r"] = { 'y:%sno/<C-r>"/<C-r>"/gI<Left><Left><Left>', desc = "Search & Replace selection" },
+    ["<leader>R"] = { function() require("ssr").open() end, desc = "Structural Search & Replace" },
     -- Common
     X = { "d", desc = "Cut" },
     ["<C-r>"] = { "<cmd>RedrawDeco<cr>", desc = "Refresh indents & rainbow" },

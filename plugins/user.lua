@@ -115,6 +115,10 @@ return {
   },
 
   {
+    "cshuaimin/ssr.nvim",
+  },
+
+  {
     "nvim-telescope/telescope-frecency.nvim",
     lazy = false,
     dependencies = { "kkharji/sqlite.lua" },
