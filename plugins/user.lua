@@ -27,6 +27,7 @@ return {
     lazy = false,
     opts = {
       override_del = true,
+      exclude = { "ns", "nS" },
       registers = {
         select = "s",
         delete = "d",
