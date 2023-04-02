@@ -4,7 +4,6 @@ return {
   -- example of imporing a plugin, comment out to use it or add your own
   -- available plugins can be found at https://github.com/AstroNvim/astrocommunity
 
-  -- { import = "astrocommunity.colorscheme.catppuccin" },
   { import = "astrocommunity.code-runner.overseer-nvim" },
   { import = "astrocommunity.color.ccc-nvim" },
   { import = "astrocommunity.completion.copilot-lua-cmp" },
@@ -13,7 +12,7 @@ return {
   { import = "astrocommunity.editing-support.nvim-regexplainer" },
   { import = "astrocommunity.editing-support.nvim-ts-rainbow2" },
   { import = "astrocommunity.indent.indent-tools-nvim" },
-  { import = "astrocommunity.motion.leap-nvim" },
+  -- { import = "astrocommunity.motion.leap-nvim" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.lua" },
