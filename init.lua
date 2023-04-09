@@ -119,11 +119,9 @@ return {
       end,
     })
 
-    vim.api.nvim_create_user_command("RedrawDeco", function()
-      vim.cmd "TSDisable rainbow"
+    vim.api.nvim_create_user_command("ToggleDeco", function()
       vim.cmd "IndentBlanklineToggle"
-      vim.cmd "IndentBlanklineToggle"
-      vim.cmd "TSEnable rainbow"
-    end, { desc = "Refresh indents & rainbow" })
+      vim.cmd "TSToggle rainbow"
+    end, { desc = "Toggle indents & rainbow" })
   end,
 }

@@ -47,7 +47,7 @@ return {
     ["<leader>r"] = { ":%sno/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", desc = "Search & Replace word" },
     ["<leader>R"] = { function() require("ssr").open() end, desc = "Structural Search & Replace" },
     ["<M-w>"] = { "<cmd>Inspect<cr>", desc = "Inspect" },
-    ["<M-r>"] = { "<cmd>RedrawDeco<cr>", desc = "Refresh indents & rainbow" },
+    ["<M-r>"] = { "<cmd>ToggleDeco<cr>", desc = "Toggle indents & rainbow" },
     ["<M-C>"] = { "C", desc = "Replace to end" },
     ["<M-D>"] = { "D", desc = "Cut to end" },
     ["<M-c><M-c>"] = { "dd", desc = "Replace line" },
