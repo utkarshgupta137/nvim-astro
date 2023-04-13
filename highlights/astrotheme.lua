@@ -1,8 +1,10 @@
 return function(H) -- a table of overrides/changes to the astrodark theme
   local C = require "astrotheme.palettes.astrodark"
+  H["Boolean"] = { fg = C.orange }
   H["Constant"] = { fg = C.orange }
   H["Identifier"] = { fg = C.red }
   H["NoiceCursor"] = { bg = C.surface2 }
+  H["Type"] = { fg = C.purple }
 
   H["@keyword.function.rust"] = { fg = C.purple }
   H["@namespace.rust"] = { fg = C.cyan }
