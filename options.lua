@@ -7,6 +7,7 @@ return {
     spell = false, -- sets vim.opt.spell
     signcolumn = "yes:2", -- sets vim.opt.signcolumn to auto
     wrap = false, -- sets vim.opt.wrap
+    numberwidth = 5,
     colorcolumn = "101",
   },
   g = {
