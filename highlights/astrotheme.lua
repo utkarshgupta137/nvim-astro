@@ -8,6 +8,7 @@ return function(H) -- a table of overrides/changes to the astrodark theme
 
   H["@keyword.function.rust"] = { fg = C.purple }
   H["@namespace.rust"] = { fg = C.cyan }
+  H["@parameter"] = { fg = C.red }
   H["@punctuation.special"] = { fg = C.purple }
   H["@storageClass.lifetime"] = { fg = C.surface2 }
 
