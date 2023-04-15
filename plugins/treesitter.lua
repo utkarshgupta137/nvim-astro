@@ -11,6 +11,9 @@ return {
           init_selection = false,
         },
       },
+      rainbow = {
+        disable = { "nix" },
+      },
     },
   },
   {
