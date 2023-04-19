@@ -91,6 +91,13 @@ return {
     --   },
     -- }
 
+    vim.on_key(function(char)
+      if vim.fn.mode() == "n" and not vim.tbl_contains({ "z" }, vim.fn.keytrans(char)) then
+        local new_hlsearch = vim.tbl_contains({ "<CR>", "n", "N", "*", "#", "?", "/" }, vim.fn.keytrans(char))
+        if vim.opt.hlsearch:get() ~= new_hlsearch then vim.opt.hlsearch = new_hlsearch end
+      end
+    end, vim.api.nvim_create_namespace "auto_hlsearch")
+
     vim.api.nvim_create_autocmd("UiEnter", {
       callback = function()
         if vim.fn.argc() == 0 then vim.cmd "Neotree show" end
