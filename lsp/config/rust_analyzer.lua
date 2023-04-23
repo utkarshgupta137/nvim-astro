@@ -6,6 +6,10 @@ return {
       },
       cargo = {
         features = "all",
+        extraArgs = {
+          "--profile",
+          "rust-analyzer",
+        },
       },
       check = {
         command = "cranky",
