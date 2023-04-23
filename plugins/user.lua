@@ -126,8 +126,8 @@ return {
     opts = {
       workspaces = {
         ["tfx"] = "~/tensorfox/galleon",
+        ["nix"] = "~/.nix",
         ["nvim"] = "~/.config/nvim",
-        ["files"] = "~/.dotfiles",
       },
       db_safe_mode = true,
     },
