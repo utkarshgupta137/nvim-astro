@@ -19,6 +19,7 @@ return {
   { import = "astrocommunity.pack.nix" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.rust" },
+  { import = "astrocommunity.pack.toml" },
   { import = "astrocommunity.pack.yaml" },
   { import = "astrocommunity.test.neotest" },
   { import = "astrocommunity.terminal-integration/flatten-nvim" },
