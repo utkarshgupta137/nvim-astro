@@ -104,6 +104,7 @@ return {
       },
       window = {
         mappings = {
+          ["P"] = { "toggle_preview", config = { use_float = false } },
           ["C"] = "close_all_subnodes",
           ["Z"] = "expand_all_nodes",
         },
