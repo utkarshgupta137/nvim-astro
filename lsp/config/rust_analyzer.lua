@@ -52,9 +52,7 @@ return {
         closureReturnTypeHints = {
           enable = "always",
         },
-        discriminantHints = {
-          enable = "fieldless",
-        },
+        closureStyle = "rust_analyzer",
         expressionAdjustmentHints = {
           enable = "always",
           hideOutsideUnsafe = true,
@@ -70,21 +68,7 @@ return {
         tests = true,
       },
       lens = {
-        location = "above_whole_item",
-        references = {
-          adt = {
-            enable = true,
-          },
-          enumVariant = {
-            enable = true,
-          },
-          method = {
-            enable = false,
-          },
-          trait = {
-            enable = true,
-          },
-        },
+        enable = false,
       },
       references = {
         excludeImports = true,
