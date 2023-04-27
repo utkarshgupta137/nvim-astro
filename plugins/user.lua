@@ -86,6 +86,13 @@ return {
   -- },
 
   {
+    "ray-x/lsp_signature.nvim",
+    opts = {
+      noice = true,
+    },
+  },
+
+  {
     "echasnovski/mini.align",
     lazy = false,
     version = false,
