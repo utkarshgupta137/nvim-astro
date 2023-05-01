@@ -42,13 +42,22 @@ return {
       desc = "Next buffer",
     },
     ["<leader>e"] = { "<cmd>Neotree toggle show<cr>", desc = "Toggle Explorer" },
+    ["<leader>gg"] = {
+      function()
+        local zellij = require "zellij"
+        zellij.ZellijCommand "run -c -- lazygit"
+        zellij.ZellijCommand "ac toggle-fullscreen"
+      end,
+      desc = "Zellij lazygit",
+    },
     ["<leader>fg"] = { function() require("telescope.builtin").git_files() end, desc = "Find git files" },
     ["<leader>fr"] = { function() require("telescope").extensions.frecency.frecency() end, desc = "Find frecency" },
     ["<leader>s"] = { function() require("telescope.builtin").resume() end, desc = "Telescope resume" },
     ["<leader>r"] = { ":%sno/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", desc = "Search & Replace word" },
     ["<leader>R"] = { function() require("ssr").open() end, desc = "Structural Search & Replace" },
+    ["<M-a>"] = { "<cmd>AstroReload<cr>", desc = "AstroReload" },
     ["<M-w>"] = { "<cmd>Inspect<cr>", desc = "Inspect" },
-    ["<M-r>"] = { "<cmd>ToggleDeco<cr>", desc = "Toggle indents & rainbow" },
+    ["<M-e>"] = { "<cmd>ToggleDeco<cr>", desc = "Toggle indents & rainbow" },
     ["<M-C>"] = { "C", desc = "Replace to end" },
     ["<M-D>"] = { "D", desc = "Cut to end" },
     ["<M-c><M-c>"] = { "dd", desc = "Replace line" },

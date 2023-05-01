@@ -146,4 +146,9 @@ return {
     lazy = false,
     init = function() vim.g.wordmotion_prefix = "e" end,
   },
+
+  {
+    "Lilja/zellij.nvim",
+    opts = {},
+  },
 }
