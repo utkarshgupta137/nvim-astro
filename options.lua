@@ -9,6 +9,7 @@ return {
     wrap = false, -- sets vim.opt.wrap
     numberwidth = 5,
     colorcolumn = "101",
+    sessionoptions = "buffers,curdir,help,tabpages,winsize,terminal",
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
