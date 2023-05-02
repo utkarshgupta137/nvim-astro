@@ -133,6 +133,7 @@ return {
     "nvim-telescope/telescope.nvim",
     opts = {
       defaults = {
+        dynamic_preview_title = true,
         layout_strategy = "vertical",
         layout_config = {
           vertical = {
@@ -144,6 +145,13 @@ return {
           height = 0.90,
           preview_cutoff = 0,
         },
+      },
+      pickers = {
+        diagnostics = { path_display = { "smart" } },
+        lsp_references = { path_display = { "smart" } },
+        lsp_definitions = { path_display = { "smart" } },
+        lsp_type_definitions = { path_display = { "smart" } },
+        lsp_implementations = { path_display = { "smart" } },
       },
     },
   },
