@@ -10,6 +10,9 @@ return {
           "--profile",
           "rust-analyzer",
         },
+        extraEnv = {
+          CARGO_PROFILE_RUST_ANALYZER_INHERITS = "dev",
+        },
       },
       check = {
         command = "cranky",
