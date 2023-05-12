@@ -52,7 +52,7 @@ return {
     },
     ["<leader>fg"] = { function() require("telescope.builtin").git_files() end, desc = "Find git files" },
     ["<leader>fr"] = { function() require("telescope").extensions.frecency.frecency() end, desc = "Find frecency" },
-    ["<leader>s"] = { function() require("telescope.builtin").resume() end, desc = "Telescope resume" },
+    ["<leader>v"] = { function() require("telescope.builtin").resume() end, desc = "Telescope resume" },
     ["<leader>r"] = { ":%sno/<C-r><C-w>/<C-r><C-w>/gI<Left><Left><Left>", desc = "Search & Replace word" },
     ["<leader>R"] = { function() require("ssr").open() end, desc = "Structural Search & Replace" },
     ["<M-a>"] = { "<cmd>AstroReload<cr>", desc = "AstroReload" },
