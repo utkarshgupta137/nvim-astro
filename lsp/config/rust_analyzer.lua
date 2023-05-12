@@ -52,6 +52,9 @@ return {
         bindingModeHints = {
           enable = true,
         },
+        closureCaptureHints = {
+          enable = true,
+        },
         closureReturnTypeHints = {
           enable = "always",
         },
