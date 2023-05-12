@@ -12,6 +12,7 @@ return {
   { import = "astrocommunity.editing-support.nvim-regexplainer" },
   { import = "astrocommunity.editing-support.nvim-ts-rainbow2" },
   { import = "astrocommunity.editing-support.text-case-nvim" },
+  { import = "astrocommunity.git.openingh" },
   { import = "astrocommunity.indent.indent-tools-nvim" },
   { import = "astrocommunity.pack.bash" },
   { import = "astrocommunity.pack.json" },
