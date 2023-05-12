@@ -108,6 +108,15 @@ return {
   },
 
   {
+    "nvim-treesitter/nvim-treesitter-context",
+    opts = {
+      max_lines = 5,
+      mode = "topline",
+      on_attach = function() return vim.bo.filetype ~= "markdown" end,
+    },
+  },
+
+  {
     "simrat39/rust-tools.nvim",
     commit = "b0bb504",
     opts = {
