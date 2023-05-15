@@ -3,7 +3,6 @@ return function(H) -- a table of overrides/changes to the astrodark theme
   H["Boolean"] = { fg = C.orange }
   H["Constant"] = { fg = C.orange }
   H["Identifier"] = { fg = C.red }
-  H["NoiceCursor"] = { bg = C.surface2 }
   H["Type"] = { fg = C.purple }
 
   H["@keyword.function.rust"] = { fg = C.purple }
