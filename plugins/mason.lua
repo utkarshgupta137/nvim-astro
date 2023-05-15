@@ -1,5 +1,11 @@
 -- customize mason plugins
 return {
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      PATH = "prepend",
+    },
+  },
   -- use mason-lspconfig to configure LSP installations
   {
     "williamboman/mason-lspconfig.nvim",
