@@ -92,6 +92,37 @@ return {
   },
 
   {
+    "utkarshgupta137/lsp-inlayhints.nvim",
+    event = "LspAttach",
+    init = function()
+      vim.api.nvim_create_augroup("LspAttach_inlayhints", {})
+      vim.api.nvim_create_autocmd("LspAttach", {
+        group = "LspAttach_inlayhints",
+        callback = function(args)
+          if not (args.data and args.data.client_id) then return end
+
+          local bufnr = args.buf
+          local client = vim.lsp.get_client_by_id(args.data.client_id)
+          require("lsp-inlayhints").on_attach(client, bufnr, false)
+        end,
+      })
+    end,
+    opts = {
+      inlay_hints = {
+        position = {
+          -- where to show the hints. values can be:
+          --   nil: show hints after the end of the line
+          --   "max_len": show hints after the longest line in the file
+          --   "fixed_col": show hints relative to the start of the line (setting padding to ~100)
+          align = "fixed_col",
+          -- extra padding on the left if align is not nil
+          padding = 102,
+        },
+      },
+    },
+  },
+
+  {
     "echasnovski/mini.align",
     lazy = false,
     version = false,
@@ -118,14 +149,21 @@ return {
 
   {
     "simrat39/rust-tools.nvim",
-    commit = "b0bb504",
     opts = {
       tools = { -- rust-tools options
         -- These apply to the default RustSetInlayHints command
         inlay_hints = {
-          -- whether to show hints at a fixed column or not
-          left_align = true,
+          auto = false,
         },
+      },
+
+      -- all the opts to send to nvim-lspconfig
+      -- these override the defaults set by rust-tools.nvim
+      -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
+      server = {
+        -- standalone file support
+        -- setting it to false may improve startup time
+        standalone = false,
       },
     },
   },
